@@ -1,1 +1,10 @@
-# Repository for EY app hack project
+# Repository for Airchain project
+
+
+npm install
+
+npm install -g ethereumjs-testrpc
+
+testrpc    
+
+npm start
