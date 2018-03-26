@@ -7,15 +7,19 @@ const PORT = 3000;
 //Defaults 7545 for Ganache , 8545 for testrpc/Ganache-cli
 var providerLocation='http://localhost:7545';
 
+
 const Web3 = require('web3');
 let web3 = new Web3();
 
 
 web3.setProvider(new Web3.providers.HttpProvider(providerLocation));
 
+app.use(express.static('public')); //public folder for static content
+
 app.get('/', function(req, res){
-   res.sendFile(__dirname + '/index.html');
-});
+    res.sendFile('index.html');
+ });
+ 
 
 // localhost:3000/blockchain
 app.get('/blockchain', function(req,res){
