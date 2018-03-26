@@ -38,6 +38,18 @@ app.get('/transaction', function(req,res){
 
 });
 
+// /block - REST API to get a block 
+app.get('/block', function(req,res){
+    var blocknum = 0; // fetching block 0 for test 
+    web3.eth.getBlock(blocknum, function(error, block){
+        if (!error){
+            console.log("retrieved")        ;
+            res.send(JSON.stringify(block)); 
+        } else{
+            console.error(error);
+        }
+    });
+});
 
  
 
