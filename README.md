@@ -3,7 +3,8 @@
 
 npm install
 
-npm install -g ethereumjs-testrpc
+npm install -g ethereumjs-testrpc   (Skip this if u have ganache installed)
+
 
 testrpc    
 
