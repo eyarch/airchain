@@ -1,0 +1,26 @@
+{
+  "name": "hackey",
+  "version": "1.0.0",
+  "description": "Blockchain application for EY hack",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theamitabh/hackey.git"
+  },
+  "author": "architecture@etihad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theamitabh/hackey/issues"
+  },
+  "homepage": "https://github.com/theamitabh/hackey#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "web3": "^1.0.0-beta.33"
+  }
+}
