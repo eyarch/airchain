@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Ethereum Test App </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EY Airchain Test Webapp  </title>
 </head>
+
 <body>
-   <p id="blockchain">Ethereum Test App</p>
-   <button onclick="EthereumServer()">Connect to the Ethereum</button>
+    <p id="test"> Test Calls (Click Below for responses)
+        <br>
+        <a href="#" onclick="getCall('/accounts')">/List Accounts</a>
+        <br>
+        <a href="#" onclick="getCall('/block')">/block GetBlock O</a>
+        <br>
+        <a href="#" onclick="getCall('/txcount')">/Tx count in Block O</a>
+
+    </p>
+
+    <p id="resultpanel"></p>
+
 </body>
 <script>
-   function EthereumServer()
-   {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-         document.getElementById("blockchain").innerHTML = this.responseText;
-         }
-      };
-      xhttp.open("GET", "/blockchain", true);
-      xhttp.send();
-   }
+    function getCall(url) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("resultpanel").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
 </script>
+
 </html>
