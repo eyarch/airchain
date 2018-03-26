@@ -1,5 +1,5 @@
 {
-  "name": "hackey",
+  "name": "airchain",
   "version": "1.0.0",
   "description": "Blockchain application for EY hack",
   "main": "server.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theamitabh/hackey.git"
+    "url": "git+https://github.com/eyarch/airchain.git"
   },
   "author": "architecture@etihad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/theamitabh/hackey/issues"
+    "url": "https://github.com/eyarch/airchain/issues"
   },
-  "homepage": "https://github.com/theamitabh/hackey#readme",
+  "homepage": "https://github.com/eyarch/airchain#readme",
   "devDependencies": {
     "nodemon": "^1.17.2"
   },
