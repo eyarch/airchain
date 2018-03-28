@@ -17,6 +17,7 @@ app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
 
+// ** JSON API URLS for front end ***
 
 // localhost:3000/accounts - get all accounts
 app.get('/accounts', function (req, res) {
