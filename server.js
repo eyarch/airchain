@@ -5,7 +5,7 @@ let app = express();
 const PORT = 3000;
 
 //Defaults 7545 for Ganache , 8545 for testrpc/Ganache-cli
-var providerLocation = 'http://localhost:7545';
+var providerLocation = 'http://localhost:8545';
 
 
 const Web3 = require('web3');
