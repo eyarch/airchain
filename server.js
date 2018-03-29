@@ -35,8 +35,7 @@ app.get('/txn/:txhash', function (req, res) {
     
 });
 
-// test
-// Rest API for endpoint localhost:3000/transaction
+// test API only  - localhost:3000/transaction
 app.get('/txcount', function (req, res) {
     var obj = web3.eth.getBlockTransactionCount("latest")
         .then(console.log);
