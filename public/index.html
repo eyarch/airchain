@@ -5,6 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tstbutton").click(function(){
+                // jQuery.post( url [, data ] [, success ] [, dataType ] )
+                $.post("/testpost",
+                {
+                  iatacode: "AUH",
+                  city: "Abu Dhabi"
+                },
+                function(data,status){
+                    alert("Name: " + data.firstname + " " + data.lastname + " aged " + data.age );
+                },
+                "json"
+                );
+            });
+        });
+        </script>
     <title>EY Airchain Test Webapp  </title>
 </head>
 
@@ -16,6 +34,8 @@
         <a href="#" onclick="getCall('/block')">/block GetBlock O</a>
         <br>
         <a href="#" onclick="getCall('/txcount')">/Tx count in Block O</a>
+        <br>
+        <button id="tstbutton" type="button" >Test Post</button>
 
     </p>
 
