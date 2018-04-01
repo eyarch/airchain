@@ -2,10 +2,15 @@
 
 const express = require('express');
 let app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+
 const PORT = 3000;
 
 //Defaults 7545 for Ganache , 8545 for testrpc/Ganache-cli
-var providerLocation = 'http://localhost:7545';
+var providerLocation = 'http://localhost:8545';
 
 const Web3 = require('web3');
 let web3 = new Web3();
@@ -35,9 +40,8 @@ app.get('/txn/:txhash', function (req, res) {
     
 });
 
-// test 2
-
-// test API only  - localhost:3000/transaction
+// test t
+// Rest API for endpoint localhost:3000/transaction
 app.get('/txcount', function (req, res) {
     var obj = web3.eth.getBlockTransactionCount("latest")
         .then(console.log);
@@ -56,6 +60,18 @@ app.get('/block/:blocknum', function (req, res) {
     });
 });
 
+// a sample Post Handler for JSON object submitted via post
+app.post('/testpost', function (req, res) {
+    console.log (req.body);
+    //can read as req.body.iatacode = "AUH";
+
+    // Preparing the object to be send back
+    var resObj =  {};
+    resObj.firstname = "John";
+    resObj.lastname = "Doe";
+    resObj.age = 33;
+    res.json(resObj);
+});
 
 
 app.listen(PORT, function () {
